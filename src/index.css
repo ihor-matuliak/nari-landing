@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #ff007a;
+  --color-purple: #9333ea;
+  --color-violet: #a855f7;
+  --color-cyan: #06b6d4;
+  --color-gold: #f59e0b;
+  --bg-dark: #050508;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  min-height: 100%;
+}
+
+/* Base Body Styling with Ambient Mesh */
+body {
+  background-color: #050508;
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(255, 0, 122, 0.18) 0%, transparent 60%),
+    radial-gradient(circle at 10% 40%, rgba(6, 182, 212, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 90% 70%, rgba(147, 51, 234, 0.14) 0%, transparent 50%);
+  background-attachment: fixed;
+  color: #f1f5f9;
+  overflow-x: hidden;
+  overflow-y: auto;
+  min-height: 100vh;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #050508;
+}
+::-webkit-scrollbar-thumb {
+  background: #222233;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ff007a;
+}
+
+/* Glassmorphism Styles */
+.glass-panel {
+  background: rgba(13, 13, 22, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-interactive {
+  background: rgba(16, 16, 26, 0.78);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-panel-interactive:hover {
+  background: rgba(22, 22, 36, 0.9);
+  border-color: rgba(6, 182, 212, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(6, 182, 212, 0.2), 0 0 15px rgba(255, 0, 122, 0.1);
+}
+
+.glass-panel-interactive:active {
+  transform: translateY(0px) scale(0.99);
+}
+
+/* Neon Glow Utilities */
+.neon-glow-pink {
+  box-shadow: 0 0 25px rgba(255, 0, 122, 0.45), inset 0 0 15px rgba(255, 0, 122, 0.1);
+}
+
+.neon-glow-cyan {
+  box-shadow: 0 0 25px rgba(6, 182, 212, 0.45), inset 0 0 15px rgba(6, 182, 212, 0.1);
+}
+
+.neon-text-pink {
+  text-shadow: 0 0 12px rgba(255, 0, 122, 0.7), 0 0 25px rgba(255, 0, 122, 0.4);
+}
+
+/* Original Title Gradient (White -> Pink -> Magenta) */
+.gradient-text-vip {
+  background: linear-gradient(135deg, #ffffff 20%, #ff6eb4 60%, #ff007a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Pulse Ring Animation */
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.12);
+    opacity: 0.35;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 2.5s infinite cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+/* Safe Area Insets for Mobile */
+.safe-bottom-padding {
+  padding-bottom: max(env(safe-area-inset-bottom, 16px), 16px);
+}
